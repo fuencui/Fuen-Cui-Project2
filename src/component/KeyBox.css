@@ -1,0 +1,15 @@
+.KeyBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 50px;
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.KeyBox:hover{
+    filter: brightness(110%);
+    cursor: pointer;
+}

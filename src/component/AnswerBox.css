@@ -1,0 +1,28 @@
+.AnswerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color:blanchedalmond ;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.yellow{
+    background-color: yellow;
+}
+
+.green{
+    background-color: green;
+}
+
+.gray{
+    background-color: gray;
+}
+
+.white{
+    background-color: rgb(184, 180, 180)
+}

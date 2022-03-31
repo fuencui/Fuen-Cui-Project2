@@ -1,0 +1,44 @@
+.link:visited, .link:link, .link:active{
+    text-decoration: none;
+    color:#fb8500;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fb8500;
+    margin-top: 20px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fb8500;
+}
+
+.nav > div{
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link:hover{
+    transform: scale(1.2, 1.2);
+}
+
+.nav > div:hover{
+    background-color:bisque;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,61 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.keyboard{
+    position: fixed;
+    bottom: 10px;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+}
+
+.wholeKeyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.DeleteButton{
+    position: fixed;
+    bottom: 10px;
+    z-index: 99;
+    height: 50px;
+    transform:translate(-220px)
+}
+
+.SubmitButton{
+    position: fixed;
+    bottom: 10px;
+    z-index: 99;
+    height: 50px;
+    transform:translate(220px)
+}
+
+.Reset{
+    position: fixed;
+    bottom: 10px;
+    z-index: 99;
+    height: 50px;
+    transform:translate(310px)
+}
+
+.solutionTable{
+    position: relative;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.emptyBoard{
+    position: absolute;
+    z-index: -999;
+}
