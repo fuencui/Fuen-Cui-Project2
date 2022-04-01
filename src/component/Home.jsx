@@ -24,8 +24,8 @@ export default function Home (){
 
                                 <Dropdown.Menu>
                                 <Dropdown.Item href="/app">easy game</Dropdown.Item>
-                                <Dropdown.Item href="/app">medium game</Dropdown.Item>
-                                <Dropdown.Item href="/app">hard game</Dropdown.Item>
+                                <Dropdown.Item href="/mediumGame">medium game</Dropdown.Item>
+                                <Dropdown.Item href="/hardGame">hard game</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>
@@ -42,8 +42,16 @@ export default function Home (){
                     <div>
                         <Link className='link' to="/gameRule">Game Rules</Link>
                     </div>
-                    <div>
-                        <Link className='link' to={"/app"}>Easy Game</Link>
+                    <div className="game">
+                        <div>
+                            <Link className='link' to={"/app"}>Easy Game</Link>
+                        </div>
+                        <div>
+                            <Link className='link' to={"/mediumGame"}>Medium Game</Link>
+                        </div>
+                        <div>
+                            <Link className='link' to={"/hardGame"}>Hard Game</Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,8 @@ export default function App() {
     const[words, setWords] = useState([]);
     const[solutionBoard, setsolutionBoard] = useState([]);
     const[picked, setPicked] = useState('');
-    const[isWordInList, setIsWordInList] = useState(true);
+    const[isReminderNotDisplay, setIsReminderNotDisplay] = useState(true);
+    const[info, SetInfo] = useState('');
     const dispatch = useDispatch();
 
 
@@ -103,10 +104,13 @@ export default function App() {
         fetch('data.txt', {mode: 'no-cors'})
         .then(response => response.text())
         .then(data =>{
-                let array =  data.trim().split("\n")
+                let array =  data.trim().split("\n");
+                const arrLower = array.map(element => {
+                    return element.toLowerCase();
+                });
                 dispatch({
                     type: 'FIVE',
-                    value: array,
+                    value: arrLower,
                 })
             }
         )
@@ -118,9 +122,6 @@ export default function App() {
             words.push(currentWord)
             setWords([...words],checkResult(currentWord)) 
             handAnswer(currentWord);
-        } else {
-            setIsWordInList(false);
-            setTimeout(() => { setIsWordInList(true);}, 2000)
         }
 
         dispatch(
@@ -150,6 +151,9 @@ export default function App() {
                 return true;
             }
         }
+        SetInfo('Not in word list. Please try again')
+        setIsReminderNotDisplay(false);
+        setTimeout(() => { setIsReminderNotDisplay(true);}, 2000)
         return false;       
     }
 
@@ -180,26 +184,20 @@ export default function App() {
 
     function checkResult(word){
         if(word === picked){
-            setIsWordInList(false);
-            setTimeout(() => { setIsWordInList(true);}, 2000)
+            SetInfo('Congratulations! The Word is ' + picked);
+            setIsReminderNotDisplay(false);
+            setTimeout(() => { setIsReminderNotDisplay(true);}, 2000)
             setTimeout(() => { handReset()}, 3000)
+            return;
         }
         if (words.length >= 7){
-            setIsWordInList(false);
-            setTimeout(() => { setIsWordInList(true);}, 2000)
+            SetInfo('Game Over! The Word is ' + picked);
+            setIsReminderNotDisplay(false);
+            setTimeout(() => { setIsReminderNotDisplay(true);}, 2000)
+            setTimeout(() => { handReset()}, 3000)
+            return;
         }
-
-
     }
-
-
-
-
-
-
-
-
-
 
     return (   
         <div className='App'> 
@@ -220,8 +218,8 @@ export default function App() {
 
                             <Dropdown.Menu>
                             <Dropdown.Item href="/app">easy game</Dropdown.Item>
-                            <Dropdown.Item href="/app">medium game</Dropdown.Item>
-                            <Dropdown.Item href="/app">hard game</Dropdown.Item>
+                            <Dropdown.Item href="/mediumGame">medium game</Dropdown.Item>
+                            <Dropdown.Item href="/hardGame">hard game</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Nav>
@@ -230,7 +228,7 @@ export default function App() {
                 </Navbar>
             </div>
             < WordDisplayBar name={currentWord}/>
-            < Reminder info='This is not in the List Please try again' display={isWordInList}/>
+            < Reminder info={info} display={isReminderNotDisplay}/>
             {console.log(solutionBoard)}
             <div className='solutionTable'>
                 <div className='emptyBoard'>
@@ -254,7 +252,7 @@ export default function App() {
                 <Button className='DeleteButton' onClick={() => handDelete()} variant="success">Delete</Button>
                 <Button className='SubmitButton' onClick={() => handSubmit()} variant="success">Submit</Button>
                 <Button className='Reset' onClick={() => handReset()} variant="primary">Reset</Button>
-                <Keyboard className='keyboard'/>
+                <Keyboard className='keyboard' type='ADD'/>
             </div>
         </div>
     );

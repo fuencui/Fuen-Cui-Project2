@@ -6,12 +6,13 @@ import { useDispatch } from 'react-redux';
 export default function KeyBox(props){
 
     let keyValue = props.keyV.toUpperCase();
+    let type = props.type;
     const dispatch = useDispatch();
 
     function handOnClick() {
         dispatch(
             {
-                type:'ADD',
+                type:type,
                 value: props.keyV,
             }
         )

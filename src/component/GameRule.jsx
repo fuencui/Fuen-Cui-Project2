@@ -23,8 +23,8 @@ export default function GameRule() {
 
                             <Dropdown.Menu>
                             <Dropdown.Item href="/app">easy game</Dropdown.Item>
-                            <Dropdown.Item href="/app">medium game</Dropdown.Item>
-                            <Dropdown.Item href="/app">hard game</Dropdown.Item>
+                            <Dropdown.Item href="/mediumGame">medium game</Dropdown.Item>
+                            <Dropdown.Item href="/hardGame">hard game</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Nav>

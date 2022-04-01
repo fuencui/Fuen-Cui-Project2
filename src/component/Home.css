@@ -21,7 +21,7 @@
     color: #fb8500;
 }
 
-.nav > div{
+.nav > div:first-of-type{
     width: 200px;
     height: 200px;
     background-color: antiquewhite;
@@ -34,11 +34,25 @@
     transform: scale(1.2, 1.2);
 }
 
-.nav > div:hover{
-    background-color:bisque;
-}
 
 .navbar{
     width: 100%;
     height: auto;
+}
+.game{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fb8500;
+}
+
+.game > div{
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
