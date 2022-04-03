@@ -1,6 +1,6 @@
 .link:visited, .link:link, .link:active{
     text-decoration: none;
-    color:#fb8500;
+    color:#e07a5f;
 }
 
 .welcome{
@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fb8500;
+    color: #e07a5f;
     margin-top: 20px;
 }
 
@@ -18,13 +18,13 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #fb8500;
+    color: #e07a5f;
 }
 
 .nav > div:first-of-type{
     width: 200px;
     height: 200px;
-    background-color: antiquewhite;
+    background-color: #f2cc8f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,6 @@
 .link:hover{
     transform: scale(1.2, 1.2);
 }
-
 
 .navbar{
     width: 100%;
@@ -45,13 +44,13 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #fb8500;
+    color: #e07a5f;
 }
 
 .game > div{
     width: 200px;
     height: 200px;
-    background-color: antiquewhite;
+    background-color: #f2cc8f;
     display: flex;
     justify-content: center;
     align-items: center;

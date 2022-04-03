@@ -1,6 +1,6 @@
 import React from "react";
 import {Link, NavLink} from "react-router-dom";
-import { Navbar, Container, NavDropdown, Nav, Dropdown} from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown} from "react-bootstrap";
 import './Home.css'
 
 export default function Home (){
@@ -11,7 +11,7 @@ export default function Home (){
                 <div className="navbar">
                     <Navbar bg="light" expand="lg">
                     <Container>
-                        <Navbar.Brand href="/home">Wordle !!!</Navbar.Brand>
+                        <Navbar.Brand href="/home">Fuen Cui Project 2 - Wordle</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
@@ -44,13 +44,13 @@ export default function Home (){
                     </div>
                     <div className="game">
                         <div>
-                            <Link className='link' to={"/app"}>Easy Game</Link>
+                            <Link className='link' to={"/app"}>Easy</Link>
                         </div>
                         <div>
-                            <Link className='link' to={"/mediumGame"}>Medium Game</Link>
+                            <Link className='link' to={"/mediumGame"}>Medium</Link>
                         </div>
                         <div>
-                            <Link className='link' to={"/hardGame"}>Hard Game</Link>
+                            <Link className='link' to={"/hardGame"}>Hard</Link>
                         </div>
                     </div>
                 </div>

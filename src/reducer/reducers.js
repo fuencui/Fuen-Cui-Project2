@@ -132,5 +132,4 @@ export default combineReducers({
     seven: sevenReducer,
     listHD: wordListHD,
     pickHD: golbPickHD,
-
 })

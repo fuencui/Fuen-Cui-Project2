@@ -1,6 +1,6 @@
 .display{
-    width: 600px;
-    height: 40px;
+    width: 700px;
+    height: 50px;
     display: flex;
     background-color: aquamarine;
     color: black;
@@ -8,5 +8,18 @@
     align-items: center;
     font-size: xx-large;
     letter-spacing: 3px;
-    margin-top: 10px;
+    margin-top: 0px;
+}
+
+
+.easy{
+    background-color: #eaac8b;
+}
+
+.medium{
+    background-color: #e56b6f;
+}
+
+.hard{
+    background-color: #b56576;
 }

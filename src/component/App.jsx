@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css'
 import Keyboard from './Keyboard';
-import { Navbar, Container, NavDropdown, Nav, Dropdown, Button} from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown, Button} from "react-bootstrap";
 import { shallowEqual, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import WordDisplayBar from './WordDisplayBar';
@@ -66,7 +66,6 @@ export default function App() {
 
     function handAnswer(word){
         const array = [];
-        console.log(picked)
         for (let i = 0; i < word.length; i++){
             for (let j = i; j < word.length; j++){
                 if ((word[i] === picked[j]) && (i === j)){
@@ -204,8 +203,8 @@ export default function App() {
             {loaddingFive()}
             <div className="navbar">
                 <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand href="/home">Wordle !!!</Navbar.Brand>
+                <Container className='container'>
+                    <Navbar.Brand href="/home">Fuen Cui Project 2 - Wordle</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -227,9 +226,10 @@ export default function App() {
                 </Container>
                 </Navbar>
             </div>
-            < WordDisplayBar name={currentWord}/>
+
+            < WordDisplayBar name={currentWord} level={'easy'}/>
             < Reminder info={info} display={isReminderNotDisplay}/>
-            {console.log(solutionBoard)}
+            
             <div className='solutionTable'>
                 <div className='emptyBoard'>
                     {solutionBoard.map((item) => (
@@ -242,12 +242,7 @@ export default function App() {
                     ))}
                 </div>
             </div>
-             
-            {console.log('picked: '+ picked)}
-            {console.log('words: '+ words)}
-            {console.log('curr: ' + currentWord)}
-            {console.log('five: ' + fiveLetter[10])}
-            {console.log('boxlist: ' + wordsList)}
+
             <div className='wholeKeyboard'>
                 <Button className='DeleteButton' onClick={() => handDelete()} variant="success">Delete</Button>
                 <Button className='SubmitButton' onClick={() => handSubmit()} variant="success">Submit</Button>
