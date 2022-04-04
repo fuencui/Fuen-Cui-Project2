@@ -67,32 +67,23 @@ export default function MediumGame() {
     function handAnswer(word){
         const array = [];
         for (let i = 0; i < word.length; i++){
-            for (let j = i; j < word.length; j++){
+            let color = 'gray';
+            for (let j = 0; j < word.length; j++){
                 if ((word[i] === picked[j]) && (i === j)){
-                    array.push({
-                        char:word[i],
-                        color:'green',
-                    })
+                    color = 'green';
                     break;
                 } else if (word[i] === picked[j]){
-                    array.push({
-                        char:word[i],
-                        color:'yellow',
-                    })
-                    break;
-                }
-                if  (j === word.length - 1){
-                    array.push({
-                        char:word[i],
-                        color:'gray',
-                    })
-                    break;
+                    color = 'yellow';
                 }
             }
+            array.push({
+                char:word[i],
+                color:color,
+            })
         }
         
         dispatch({
-            type: 'LISTMED',
+            type: 'LIST',
             value: array,
         })
 
